@@ -1,19 +1,31 @@
-/*
-  Create your component here!
+import React, { useState, useEffect } from 'react';
 
-  Start coding here. `index.js` is the final exported piece,
-  so make sure this file contains the final exported module.
-*/
+function useCompatLocalStorage(friendID) {
+  const [isCompatible, setIsCompatible] = useState(null);
 
-import React from 'react';
+  useEffect(() => {
+    try {
+      const testData = "__useCompatLocalStorage__";
+      storage = window.localStorage;
+      storage.setItem(testData, testData);
+      storage.removeItem(testData);
+      setIsCompatible(true);
+    } catch (e) {
+      
+      if (e.name === "SecurityError") {
+        // SecurityError
+        // The request violates a policy decision, or the origin is not a valid scheme/host/port tuple 
+        // (this can happen if the origin uses the file: or data: scheme, for example). For example, the 
+        // user may have their browser configured to deny permission to persist data for the specified origin.
+        setIsCompatible(false);
+      }
 
+      // Catch all other errors and set the state.
+      setIsCompatible(false);
+    }
+  });
 
-const MyComponent = props => {
-  return (
-    <div>
-      Hello My Component!!!!
-    </div>
-  );
-};
+  return isCompatible;
+}
 
-export default MyComponent;
+export default useCompatLocalStorage;
