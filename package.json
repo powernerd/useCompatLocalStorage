@@ -1,7 +1,7 @@
 {
-  "name": "create-react-component",
+  "name": "use-compat-local-storage",
   "version": "0.1.0",
-  "description": "A template repository to create react components",
+  "description": "React hook which checks the current platform for localStorage support.",
   "main": "dist/index.js",
   "scripts": {
     "build": "webpack --mode production",
@@ -10,17 +10,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MrBenJ/create-react-component.git"
+    "url": "git+https://github.com/powernerd/useCompatLocalStorage.git"
   },
   "keywords": [
-    "react"
+    "react hook localStorage"
   ],
-  "author": "Ben Junya",
+  "author": "Andy Saman",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/MrBenJ/create-react-component/issues"
+    "url": "https://github.com/powernerd/useCompatLocalStorage/issues"
   },
-  "homepage": "https://github.com/MrBenJ/create-react-component#readme",
+  "homepage": "https://github.com/powernerd/useCompatLocalStorage#readme",
   "dependencies": {
     "react": "^16.13.0"
   },
