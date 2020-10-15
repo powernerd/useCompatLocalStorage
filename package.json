@@ -22,7 +22,7 @@
   },
   "homepage": "https://github.com/powernerd/useCompatLocalStorage#readme",
   "dependencies": {
-    "react": "^16.13.0"
+    "react": "^16.14.0"
   },
   "devDependencies": {
     "@ava/babel": "^1.0.1",
